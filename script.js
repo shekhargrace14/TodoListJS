@@ -1,41 +1,39 @@
+const inputBox = document.getElementById("input-box");
+const listContainer = document.getElementById("list-container");
 
-let addItem = document.getElementById("addItem");
+function addTask(){
+    if(inputBox.value === ''){
+        alert("You must write something!");
+    }else{
+        let li = document.createElement("li");
+        li.innerHTML=inputBox.value;
+        listContainer.appendChild(li);
 
-let ul = document.getElementById("ul");
+        let span = document.createElement("span");
+        span.innerHTML="\u00d7";
+        li.appendChild(span);
+    }
+    inputBox.value = "";
+    saveData()
+}
 
-let li = document.createElement('li'); 
+listContainer.addEventListener("click", function(e){
+    if(e.target.tagName === 'LI'){
+        e.target.classList.toggle("checked");
+        saveData()
+    }
+    else if(e.target.tagName === "SPAN"){
+        e.target.parentElement.remove();
+        saveData()
+    }
+}, false);
 
-let span = document.createElement("span");
+function saveData(){
+    localStorage.setItem("data", listContainer.innerHTML );
+}
 
+function showTask(){
+    listContainer.innerHTML = localStorage.getItem("data");
+}
 
-submit.addEventListener("click", function(){
-
-    text =addItem.value
-
-    let newText = document.createTextNode(text) 
-
-    li.appendChild(newText)
-
-    ul.appendChild(li)
-
-    addItem.value = "";
-
-    li.appendChild(span)
-  
-    let cross = document.createElement("X")
-    span.appendChild(cross)
-    span.className = "delete d-flex align-center justify-center del"
-    span.innerHTML="X"
-
-})
-
-span.addEventListener("click", function(){
-    console.log("span del");
-    li.innerHTML="";
-    ul.removeChild(li)
-})
-
-
-// li.addEventListener('click', function(){
-//     li.style.textDecoration:"line-through"
-// })
+showTask();

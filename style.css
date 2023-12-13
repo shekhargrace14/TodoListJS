@@ -1,171 +1,109 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    /* color: white; */
-    font-family: var(--font-primary);
-}
-:root{
-    --primary-color: #ff643c;
-    --bg-dark-primary: #ebecf0;
-    --bg-dark-secondary: #121212;
-    --bg-gray: #171717;
-    --bg-gray-hover:#282828;
-    --font-primary: 'Robot', sans-serif;
 }
 
-body{
-    background-image: linear-gradient(to right, rgb(28,54,124), rgb(58,18,80));
-    height: 100vh;
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px ;
+
+}
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
 }
 
-/* global css starts here  */
-a{
-    text-decoration: none;
+.row{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    flex: 1;
+    border:none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
 }
 button{
-    background-color: white;
-    color: black;
-    padding: .6rem 1.2rem;
-    border-radius: 2.5rem;
-    margin-left: 1rem;
+    border:none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: #ff5945;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
-    transition: all ease-in-out 200ms;
-}
-button:hover{
-    transform: scale(1.1);
-}
-.btn-secondary{
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
-}
-h1 h2 h3 h4 h5 h6{
-    line-height: 2.5rem;
-    font-family: var(--font-primary);
-}
-h1{
-    font-size: 45px;
-}
-h2{
-    font-size: 18px;
-    margin: 1rem 0;
-}
-h4{
-    font-size: 18px;
-    margin: .5rem 0;
-}
-p{
-    line-height: 2.5rem;
-    font-family: var(--font-primary);
-
-}
-.container{
-    width: 550px;
-    background-color: white;
-    padding: 1rem ;
-    border-radius: 10px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-.parent{
-    width: 99%;
-    margin: 1rem auto;
+    border-radius: 40px;
 }
 
-.d-flex{
-    display: flex;
-    
-}
-.justify-between{
-    justify-content: space-between;
-}
-.justify-start{
-    justify-content: start;
-}
-
-.justify-center{
-    justify-content: center;
-}
-.align-center{
-    align-items: center;
-}
-.align-start{
-    align-items: start;
-}
-.direction-column{
-    flex-direction: column;
-}
-.align-content{
-    align-content: space-between ;
-
-}
-/* global css ends here  */
-
-.inputField{
-    border-radius: 50px;
-    /* border: 2px solid red; */
-    background-color: var(--bg-dark-primary);
-}
-
-input{
-    padding: 0.9rem 2rem;
-    /* color: var(--bg-dark-primary); */    
-    border-radius: 50px;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    width: 100%;
-
-
-}
-#submit{
-    background-color: var(--primary-color);
-    color: white;
-    width: 30%;
-
-
-}
-input::selection{
-    border: none;
-    outline: none;
-
-}
-
-ul{
-    margin: 1rem 0;
-}
-li{
-    /* background-color: var(--bg-dark-primary); */
-    padding: .5rem 1rem;
-    border-radius: 50px;
+ul li{
     list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
     position: relative;
-
 }
 
-li:select{
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width:28px;
+    border-radius: 50%;
+    background-image: url(./images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left:8px;
+}
+ul li.checked{
+    color:#555;
     text-decoration: line-through;
 }
 
-
-
-.delete{
-    /* background-color: var(--primary-color); */
-    padding: 1rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 100%;
-    position: absolute;
-    top:0;
-    right:0;
-    cursor: pointer;
-    color: var(--bg-dark-secondary);
+ul li.checked::before{
+    background-image: url(./images/checked.png);
 }
 
-.delete:hover{
-    background-color: var(--primary-color);
-    color: white;
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
 
+    border-radius: 50%;
+}
 
+ul li span:hover{
+    background: #edeef0;
 }
