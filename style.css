@@ -2,10 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
+    /* color: white; */
+    font-family: var(--font-primary);
 }
 :root{
-    --bg-dark-primary: #000000;
+    --primary-color: #ff643c;
+    --bg-dark-primary: #ebecf0;
     --bg-dark-secondary: #121212;
     --bg-gray: #171717;
     --bg-gray-hover:#282828;
@@ -13,7 +15,8 @@
 }
 
 body{
-    background-color: var(--bg-dark-primary);
+    background-image: linear-gradient(to right, rgb(28,54,124), rgb(58,18,80));
+    height: 100vh;
 }
 
 /* global css starts here  */
@@ -41,6 +44,9 @@ h1 h2 h3 h4 h5 h6{
     line-height: 2.5rem;
     font-family: var(--font-primary);
 }
+h1{
+    font-size: 45px;
+}
 h2{
     font-size: 18px;
     margin: 1rem 0;
@@ -55,11 +61,12 @@ p{
 
 }
 .container{
-    width: 990px;
-    background-color: var(--bg-dark-secondary);
-    padding: 1rem;
+    width: 550px;
+    background-color: white;
+    padding: 1rem ;
     border-radius: 10px;
     margin: 0 auto;
+    overflow: hidden;
 }
 .parent{
     width: 99%;
@@ -76,6 +83,10 @@ p{
 .justify-start{
     justify-content: start;
 }
+
+.justify-center{
+    justify-content: center;
+}
 .align-center{
     align-items: center;
 }
@@ -91,8 +102,57 @@ p{
 }
 /* global css ends here  */
 
+.inputField{
+    border-radius: 50px;
+    /* border: 2px solid red; */
+    background-color: var(--bg-dark-primary);
+}
+
 input{
     padding: 0.9rem 2rem;
-    color: var(--bg-dark-primary);
+    /* color: var(--bg-dark-primary); */    
+    border-radius: 50px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
 
+
+}
+#submit{
+    background-color: var(--primary-color);
+    color: white;
+    width: 30%;
+
+
+}
+input::selection{
+    border: none;
+    outline: none;
+
+}
+
+ul{
+    margin: 1rem 0;
+}
+li{
+    background-color: var(--bg-dark-primary);
+    padding: .5rem 1rem;
+    border-radius: 50px;
+    list-style: none;
+    position: relative;
+
+}
+
+
+
+.delete{
+    background-color: var(--primary-color);
+    padding: rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    position: absolute;
+    top:0;
+    right:0;
 }
