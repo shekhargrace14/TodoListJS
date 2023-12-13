@@ -136,7 +136,7 @@ ul{
     margin: 1rem 0;
 }
 li{
-    background-color: var(--bg-dark-primary);
+    /* background-color: var(--bg-dark-primary); */
     padding: .5rem 1rem;
     border-radius: 50px;
     list-style: none;
@@ -144,15 +144,28 @@ li{
 
 }
 
+li:select{
+    text-decoration: line-through;
+}
+
 
 
 .delete{
-    background-color: var(--primary-color);
-    padding: rem;
+    /* background-color: var(--primary-color); */
+    padding: 1rem;
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 100%;
     position: absolute;
     top:0;
     right:0;
+    cursor: pointer;
+    color: var(--bg-dark-secondary);
+}
+
+.delete:hover{
+    background-color: var(--primary-color);
+    color: white;
+
+
 }
